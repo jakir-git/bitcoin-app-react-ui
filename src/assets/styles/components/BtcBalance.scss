@@ -1,0 +1,111 @@
+.bitcoin-card_balance {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+
+  &_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    &_right {
+      color: #aeb8c4;
+      text-transform: uppercase;
+      h3 {
+        font-size: 18px;
+      }
+    }
+
+    &_icon {
+      display: flex;
+      align-items: center;
+
+      h3 {
+        font-size: 18px;
+        color: #4c5968;
+      }
+
+      img {
+        max-width: 50px;
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &_main_amount {
+    h1 {
+      font-size: 40px;
+      line-height: 55px;
+    }
+  }
+
+  &_usd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+
+    h3 {
+      color: #aeb8c4;
+      font-size: 24px;
+    }
+
+    .btn_percentage {
+      background-color: #ee225d;
+      display: inline-block;
+      padding: 6px 12px;
+      color: #fff;
+      border-radius: 30px;
+      font-size: 12px;
+    }
+  }
+  &_toggle {
+    margin-top: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+
+    img {
+      max-width: 30px;
+      transition: all 0.7s;
+      &.expand {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &_expand {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    animation: expandAnimation 1s ease forwards;
+
+    button {
+      background-color: #f0f2f68a;
+      border: 0;
+      cursor: pointer;
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin: 0 10px;
+      width: 100%;
+
+      img {
+        max-width: 30px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+@keyframes expandAnimation {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 200px; /* Set this to a reasonable height or auto */
+    opacity: 1;
+  }
+}

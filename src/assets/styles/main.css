@@ -1,0 +1,403 @@
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SF-Pro-Display-Semibold.otf") format("opentype");
+  font-weight: semibold;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  color: #4c5968;
+  font-family: "SF Pro Display";
+}
+
+body {
+  background-color: #e5eaf1;
+}
+body #root {
+  margin: 0 auto;
+  background-color: #f3f6f9;
+  border-radius: 20px;
+}
+body #root .app_content {
+  background-color: #f0f2f6;
+  padding: 20px 25px;
+}
+body #root .app_content .button-container {
+  display: flex;
+  justify-content: space-between;
+}
+body #root .app_content .button-container button {
+  background-color: #fff;
+  border: 0;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 0 10px;
+  width: 100%;
+}
+body #root .app_content .button-container button img {
+  max-width: 40px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #fff;
+  color: #4c5968;
+  position: relative;
+}
+.header_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 10;
+}
+.header_title {
+  font-size: 26px;
+  color: #4c5968;
+}
+.header_menu_btn {
+  position: relative;
+  width: 30px;
+  text-align: right;
+}
+.header_menu_btn .header_dropdown_menu {
+  position: absolute;
+  background: #fff;
+  right: 0;
+  top: 30px;
+  width: 170px;
+  padding: 5px 0 5px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 2px 14px -10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 14px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 14px -10px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  transform-origin: top right;
+  animation: dropdownAnimation 0.3s ease forwards;
+  z-index: 1000;
+}
+.header_menu_btn .header_dropdown_menu ul li {
+  padding: 13px 15px 13px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+.header_menu_btn .header_dropdown_menu ul li span,
+.header_menu_btn .header_dropdown_menu ul li path {
+  transition: all 0.4s;
+}
+.header_menu_btn .header_dropdown_menu ul li:nth-child(4) {
+  border-bottom: 0;
+}
+.header_menu_btn .header_dropdown_menu ul li:hover span {
+  color: #ee225d;
+}
+.header_menu_btn .header_dropdown_menu ul li:hover svg path {
+  color: #ee225d;
+}
+.header_menu_btn .header_dropdown_menu ul li .header_list_icon img {
+  max-width: 15px;
+}
+
+@keyframes dropdownAnimation {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+.bitcoin-card_balance {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+}
+.bitcoin-card_balance_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.bitcoin-card_balance_head_right {
+  color: #aeb8c4;
+  text-transform: uppercase;
+}
+.bitcoin-card_balance_head_right h3 {
+  font-size: 18px;
+}
+.bitcoin-card_balance_head_icon {
+  display: flex;
+  align-items: center;
+}
+.bitcoin-card_balance_head_icon h3 {
+  font-size: 18px;
+  color: #4c5968;
+}
+.bitcoin-card_balance_head_icon img {
+  max-width: 50px;
+  margin-right: 20px;
+}
+.bitcoin-card_balance_main_amount h1 {
+  font-size: 40px;
+  line-height: 55px;
+}
+.bitcoin-card_balance_usd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+.bitcoin-card_balance_usd h3 {
+  color: #aeb8c4;
+  font-size: 24px;
+}
+.bitcoin-card_balance_usd .btn_percentage {
+  background-color: #ee225d;
+  display: inline-block;
+  padding: 6px 12px;
+  color: #fff;
+  border-radius: 30px;
+  font-size: 12px;
+}
+.bitcoin-card_balance_toggle {
+  margin-top: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.bitcoin-card_balance_toggle img {
+  max-width: 30px;
+  transition: all 0.7s;
+}
+.bitcoin-card_balance_toggle img.expand {
+  transform: rotate(180deg);
+}
+.bitcoin-card_balance_expand {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+  animation: expandAnimation 1s ease forwards;
+}
+.bitcoin-card_balance_expand button {
+  background-color: rgba(240, 242, 246, 0.5411764706);
+  border: 0;
+  cursor: pointer;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 0 10px;
+  width: 100%;
+}
+.bitcoin-card_balance_expand button img {
+  max-width: 30px;
+  margin-bottom: 5px;
+}
+
+@keyframes expandAnimation {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 200px; /* Set this to a reasonable height or auto */
+    opacity: 1;
+  }
+}
+.tabbar {
+  padding: 30px 0;
+}
+.tabbar_buttons {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+.tabbar_buttons button {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 30px;
+  border: 0;
+  color: #aeb8c4;
+  background: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.tabbar_buttons button.active, .tabbar_buttons button:hover {
+  background: #aeb8c4;
+  color: #fff;
+}
+.tabbar_content {
+  background: #fff;
+  border-radius: 15px;
+  padding: 40px 30px 0 0;
+  position: relative;
+}
+.tabbar_content .recharts-wrapper .recharts-line path {
+  stroke: #ff8f17;
+  stroke-width: 5px;
+}
+.tabbar_content .recharts-wrapper .recharts-line-dots circle:nth-child(1) {
+  stroke: #ff8f17;
+  stroke-width: 0px;
+  fill: #ff8f17;
+}
+.tabbar_content .recharts-wrapper .recharts-line-dots circle:nth-child(2) {
+  stroke: #ff8f17;
+  stroke-width: 0px;
+  fill: #ff8f17;
+}
+.tabbar_content .recharts-wrapper .recharts-line-dots circle:nth-child(3) {
+  stroke: #ff8f17;
+  stroke-width: 0px;
+  fill: #ff8f17;
+}
+.tabbar_content .recharts-wrapper .recharts-line-dots circle:nth-child(4) {
+  stroke: #ff8f17;
+  stroke-width: 0px;
+  fill: #ff8f17;
+}
+.tabbar_content .recharts-wrapper .recharts-line-dots circle:nth-child(5) {
+  stroke: #ffa82b;
+  stroke-width: 10px;
+}
+.tabbar_dollar_rate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 30px;
+}
+.tabbar_dollar_rate .dollar_rate_single {
+  position: relative;
+  padding-left: 25px;
+}
+.tabbar_dollar_rate .dollar_rate_single.higher::before {
+  background-color: #1ec070;
+}
+.tabbar_dollar_rate .dollar_rate_single.lower::before {
+  background-color: #ef2755;
+}
+.tabbar_dollar_rate .dollar_rate_single::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -5px;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+}
+.tabbar_dollar_rate div span {
+  color: #9a9bb0;
+}
+.tabbar .bitcoin_rate {
+  position: absolute;
+  width: 100%;
+  bottom: 30px;
+  left: 35px;
+  padding-left: 20px;
+  color: #4c5968;
+  font-size: 17px;
+}
+.tabbar .bitcoin_rate::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -4px;
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+  background: #ffaf30;
+  z-index: 2;
+}
+.tabbar .bitcoin_rate::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: 50%;
+  margin-top: -8px;
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  background: #f7d8a6;
+  z-index: 1;
+}
+
+.btn-gloabl {
+  background-color: rgba(240, 242, 246, 0.5411764706);
+  border: 0;
+  cursor: pointer;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 0 10px;
+  width: 100%;
+}
+.btn-gloabl img {
+  max-width: 30px;
+  margin-bottom: 5px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  background: #fff;
+  right: 15px;
+  top: 50px;
+  width: 170px;
+  padding: 5px 0 5px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 2px 14px -10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 14px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 14px -10px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  transform-origin: top right;
+  animation: dropdownAnimation 0.3s ease forwards;
+  z-index: 1000;
+}
+.dropdown-menu ul li {
+  padding: 13px 15px 13px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+.dropdown-menu ul li span,
+.dropdown-menu ul li path {
+  transition: all 0.4s;
+}
+.dropdown-menu ul li:nth-child(4) {
+  border-bottom: 0;
+}
+.dropdown-menu ul li:hover span {
+  color: #ee225d;
+}
+.dropdown-menu ul li:hover svg path {
+  color: #ee225d;
+}
+.dropdown-menu ul li .header_list_icon img {
+  max-width: 15px;
+}
+
+/*# sourceMappingURL=main.css.map */

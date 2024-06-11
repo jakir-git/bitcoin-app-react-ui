@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SF-Pro-Display-Semibold.otf") format("opentype");
+  font-weight: semibold;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  color: #4c5968;
+  font-family: "SF Pro Display";
+}
+body {
+  background-color: #e5eaf1;
+  #root {
+    margin: 0 auto;
+    background-color: #f3f6f9;
+    border-radius: 20px;
+
+    .app_content {
+      background-color: #f0f2f6;
+      padding: 20px 25px;
+
+      .button-container {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+          background-color: #fff;
+          border: 0;
+          cursor: pointer;
+          padding: 20px;
+          border-radius: 10px;
+          margin: 0 10px;
+          width: 100%;
+
+          img {
+            max-width: 40px;
+            height: auto;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}
