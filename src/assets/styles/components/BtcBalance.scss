@@ -90,6 +90,11 @@
       border-radius: 10px;
       margin: 0 10px;
       width: 100%;
+      transition: all 0.4s;
+
+      &:hover {
+        background-color: #aeb8c4;
+      }
 
       img {
         max-width: 30px;
